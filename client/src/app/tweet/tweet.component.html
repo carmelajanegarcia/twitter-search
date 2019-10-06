@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-header">
+    <div class="row d-flex align-items-center">
+      <div class="col-auto">
+        <img src="{{tweet.user.profileUrl}}" />
+      </div>
+      <div class="col-auto font-weight-bold">
+        {{tweet.user.name}}
+      </div>
+      <div class="col-auto">
+        @{{tweet.user.username}}
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+      {{tweet.text}}
+  </div>
+  <div class="card-footer text-muted">
+    {{tweet.createdAt | date: 'MMMM dd, yyyy'}}
+  </div>
+</div>

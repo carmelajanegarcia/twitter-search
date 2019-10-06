@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Twitter Search</h1>
+  <div class="form-row align-items-center">
+    <div class="col">
+      <label class="sr-only" for="inlineFormInput">Search</label>
+      <input type="text" [(ngModel)]="keyword" class="form-control mb-2" id="inlineFormInput"
+        placeholder="Enter keyword...">
+    </div>
+    <div class="col">
+      <button (click)="search()" class="btn btn-primary mb-2" type="button" [disabled]="searchLoading">
+          Search <span *ngIf="searchLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+
+  <div *ngFor="let tweet of tweets" class="container p-2">
+    <app-tweet [tweet]="tweet"></app-tweet>
+  </div>
+
+  <div class="d-flex align-items-center p-4">
+    <button (click)="showMore()" class="btn btn-block">
+      <span *ngIf="!loading">Show more...</span>
+      <div *ngIf="loading" class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </button>
+  </div>
+</div>
