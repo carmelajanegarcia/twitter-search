@@ -102,3 +102,11 @@ environments:
                 username: "twitter-api"
                 password: "password123"
                 databaseName: "twitter-search"
+    production:
+        grails:
+            mongodb:
+                host: "localhost"
+                port: 27017
+                username: "twitter-api"
+                password: "password123"
+                databaseName: "twitter-search"
